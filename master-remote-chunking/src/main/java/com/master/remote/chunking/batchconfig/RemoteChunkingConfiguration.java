@@ -7,7 +7,7 @@ import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.step.tasklet.TaskletStep;
-import org.springframework.batch.integration.chunk.RemoteChunkingMasterStepBuilderFactory;
+import org.springframework.batch.integration.chunk.RemoteChunkingManagerStepBuilderFactory;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +23,7 @@ public class RemoteChunkingConfiguration {
 
 
     private final JobBuilderFactory jobBuilderFactory;
-    private final RemoteChunkingMasterStepBuilderFactory remoteChunkingMaster;
+    private final RemoteChunkingManagerStepBuilderFactory remoteChunkingMaster;
     private final ItemReader<Transaction> itemReader;
 
     @Bean
