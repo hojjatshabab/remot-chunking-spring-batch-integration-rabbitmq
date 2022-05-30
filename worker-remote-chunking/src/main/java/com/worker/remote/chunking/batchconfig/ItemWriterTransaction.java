@@ -1,6 +1,6 @@
-package com.worker.remote.chunking.config;
+package com.worker.remote.chunking.batchconfig;
 
-import com.worker.remote.chunking.model.Transaction;
+import com.master.remote.chunking.model.Transaction;
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.database.builder.JdbcBatchItemWriterBuilder;
@@ -16,10 +16,10 @@ public class ItemWriterTransaction {
 
     public DataSource dataSource(){
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
-        dataSourceBuilder.driverClassName("org.h2.Driver");
-        dataSourceBuilder.url("jdbc:h2:mem:testdb");
-        dataSourceBuilder.username("sa");
-        dataSourceBuilder.password("password");
+        dataSourceBuilder.driverClassName("org.postgresql.Driver");
+        dataSourceBuilder.url("jdbc:postgresql://localhost:5432/remote-chunking");
+        dataSourceBuilder.username("postgres");
+        dataSourceBuilder.password("postgres");
         return dataSourceBuilder.build();
     }
 

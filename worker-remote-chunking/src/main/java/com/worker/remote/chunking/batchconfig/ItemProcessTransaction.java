@@ -1,4 +1,4 @@
-package com.master.remote.chunking.batchconfig;
+package com.worker.remote.chunking.batchconfig;
 
 import com.master.remote.chunking.model.Transaction;
 import org.springframework.batch.item.ItemProcessor;

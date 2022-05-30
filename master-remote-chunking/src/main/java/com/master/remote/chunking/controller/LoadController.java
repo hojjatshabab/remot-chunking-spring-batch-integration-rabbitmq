@@ -1,6 +1,6 @@
 package com.master.remote.chunking.controller;
 
-import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.*;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
@@ -19,16 +19,11 @@ import static java.lang.System.currentTimeMillis;
 
 @RestController
 @RequestMapping("/load")
-@Data
+@RequiredArgsConstructor
 public class LoadController {
 
     private final JobLauncher jobLauncher;
     private final Job job;
-
-    public LoadController(Job job, JobLauncher jobLauncher) {
-        this.job = job;
-        this.jobLauncher = jobLauncher;
-    }
 
     @GetMapping
     public BatchStatus load() throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException {

@@ -20,7 +20,8 @@ public class ItemReaderTransaction {
         FlatFileItemReader<Transaction> itemReader = new FlatFileItemReader<>();
         itemReader.setLinesToSkip(1);
         itemReader.setName("CSV-Reader");
-        itemReader.setResource(new FileSystemResource("src/main/resources/csv-file/transaction.csv"));
+        itemReader.setResource(
+                new FileSystemResource("src/main/resources/csv-file/transaction.csv"));
         itemReader.setLineMapper(lineMapper());
         itemReader.setSaveState(false);
         return itemReader;
