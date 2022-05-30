@@ -3,6 +3,7 @@
 1.please run rebbitmq on docker with under commande: 
 
 1.1.docker pull rabbitmq:3-management
+
 1.2.docker run --rm -it -p 15672:15672 -p 5672:5672 rabbitmq:3-management
 
 
@@ -15,14 +16,19 @@
 5.and create table "transaction" with sql code :
 
 CREATE TABLE IF NOT EXISTS public.transaction
+
 (
 
 account character varying COLLATE pg_catalog."default",
+
 amount character varying COLLATE pg_catalog."default",
+
 "timestamp" character varying COLLATE pg_catalog."default"
+
 )
 
 6.run master-remote-chunking
+
 7.run worker-remote-chunking
 
 8.run the job with:
