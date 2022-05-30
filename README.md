@@ -6,6 +6,9 @@
 
 1.2.docker run --rm -it -p 15672:15672 -p 5672:5672 rabbitmq:3-management
 
+***if you want to run rabbitMQ once and for all time:
+sudo docker run -d -p 15672:15672 -p 5672:5672 --restart=always --name RabbitMQ rabbitmq:3-management
+
 
 2.login in rabbitMQ with username and password : quest  
 
